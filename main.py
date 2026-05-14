@@ -1,5 +1,5 @@
 """ DATA BASE """
-data_base = []
+data_base = [{'name':'Fray Ismael','age':23,'email':'frayismael@gmail.com','password':'80931336211329'}]
 
 class SystemAccount:
     """ Constructor <- This recieve and save the date of account"""
@@ -33,24 +33,38 @@ class SystemAccount:
         else:
             return "ERROR the password is incorrect"
         if self.name and self.age and self.__email and self.__password:
+            for i in data_base:
+                if i.get('email') == self.__email.lower():
+                    raise PermissionError('ERROR THE ACCOUNT ALREADY EXIT')
+                
             data_base.append({
-                'name': self.name,
-                'age': self.age,
-                'email': self.__email,
-                'password': self.__password
-            })
+                    'name': self.name,
+                    "age": self.age,
+                    'email': self.__email,
+                    'password': str(self.__password)
+                })
             return "ACCESS ACTIVE"
-        else:
-            return "ACESS NEGATIVE"
 
     def n_register(self):
         name = input("Write you name: ")
         age = int(input("Write you year old: "))
         email = input("Write you email: ")
-        password = input("Write you password: ")
+        password = input("Write you password: ") 
         return self.register(name,age,email,password)
 
+    """ Method Login """
+    def login(self):
+        email = input("Write you email: ").lower()
+        password = input('Write you password: ')
+        for i in data_base:
+            if i.get("email") == email and i.get('password') == str(password):
+                return "ACCESS ACTIVE"
+        else:
+            return "Try Again"
+
+        
 
 example = SystemAccount()
-
 print(example.n_register())
+print(data_base)
+print(example.login())
