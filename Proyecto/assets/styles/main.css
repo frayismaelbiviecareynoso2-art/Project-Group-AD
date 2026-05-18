@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+} 
+/* Design the background of the major page */
+.container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, #ff5555, #6025f5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.form__container{
+    width: 450px;
+    height: 500px;
+    background-color: #ffff;
+    border-radius: 10px;
+    padding: 10px;
+    
+}
+/*  TITLE FORM  */
+.form__title{
+    text-align: center;
+    font-size: 2rem;
+}

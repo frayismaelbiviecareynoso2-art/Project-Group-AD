@@ -58,9 +58,12 @@ class SystemAccount:
         password = input('Write you password: ')
         for i in data_base:
             if i.get("email") == email and i.get('password') == str(password):
+                account_access()
                 return "ACCESS ACTIVE"
+            
         else:
             return "Try Again"
+    def account_access
 
         
 
